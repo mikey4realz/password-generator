@@ -13,14 +13,21 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 easy_new_password = ""
 for letter in range(0, nr_letters):
-  random_letter_index = random.randint(0, len(letters) - 1)
-  easy_new_password += letters[random_letter_index]
+  #random_letter_index = random.randint(0, len(letters) - 1)
+  random_letter = random.choice(letters)
+  #easy_new_password += letters[random_letter_index]
+  easy_new_password += random_letter
 for symbol in range(0, nr_symbols):
-  random_symbol_index = random.randint(0, len(symbols) - 1)
-  easy_new_password += symbols[random_symbol_index]
+  #random_symbol_index = random.randint(0, len(symbols) - 1)
+  random_symbol = random.choice(symbols)
+  #easy_new_password += symbols[random_symbol_index]
+  easy_new_password += random_symbol
 for number in range(0, nr_numbers):
-  random_number_index = random.randint(0, len(numbers) - 1)
-  easy_new_password += numbers[random_number_index]
+  #random_number_index = random.randint(0, len(numbers) - 1)
+  random_number = random.choice(numbers)
+  #easy_new_password += numbers[random_number_index]
+  easy_new_password += random_number
+  
 print(f"Easy level: Your password is {easy_new_password}")
 
 #Hard Level - Order of characters randomised:
@@ -28,21 +35,22 @@ print(f"Easy level: Your password is {easy_new_password}")
 password_length = nr_letters + nr_symbols + nr_numbers
 hard_new_password = ""
 password_characters = []
-random_symbols_count = 0
-random_numbers_count = 0
 
 for i in range(0, nr_letters):
-  random_letter_index = random.randint(0, len(letters) - 1)
-  password_characters.append(letters[random_letter_index]) 
+  #random_letter_index = random.randint(0, len(letters) - 1)
+  #password_characters.append(letters[random_letter_index])
+  password_characters.append(random.choice(letters)) 
   
 for j in range(0, nr_symbols):
-  random_symbol_index = random.randint(0, len(symbols) - 1)
-  password_characters.append(symbols[random_symbol_index])
+  #random_symbol_index = random.randint(0, len(symbols) - 1)
+  #password_characters.append(symbols[random_symbol_index])
+  password_characters.append(random.choice(symbols))
   
 for k in range(0, nr_numbers):
-  random_number_index = random.randint(0, len(numbers) - 1)
-  password_characters.append(numbers[random_number_index])
-
+  #random_number_index = random.randint(0, len(numbers) - 1)
+  #password_characters.append(numbers[random_number_index])
+  password_characters.append(random.choice(numbers))
+  
 for i in range(0, password_length):
   list_length = len(password_characters)
   random_number = random.randint(0,list_length-1)
